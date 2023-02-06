@@ -1,0 +1,4 @@
+function CreateTab2Init()
+{
+	
+}

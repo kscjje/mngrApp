@@ -1,0 +1,117 @@
+.m10 {
+    margin: 10px;
+}
+
+.mt05 {
+    margin-top: 5px;
+}
+
+.pl05 {
+    padding-left: 5px;
+}
+
+.hs-booking-grid-container tbody.dx-state-hover {
+    background-color: #ebebeb;
+}
+
+.dark .hs-booking-grid-container tbody.dx-state-hover {
+    background-color: #484848;
+}
+
+.hs-booking-grid-container .fa-calendar.complete {
+    color: #367E18;
+}
+
+.hs-booking-grid-container .fa-calendar.cancel {
+    color: #CC3636;
+}
+
+.hs-booking-grid-container .fa-circle-check {
+    color: #ABC270;
+    opacity: 100;
+}
+
+.hs-booking-grid-container .fa-circle-xmark {
+    color: #C21010;
+}
+
+.hs-booking-grid-container .booking-status {
+    font-weight: 600;
+}
+
+.hs-booking-grid-container .booking-status.complete {
+    color: #367E18;
+}
+
+.hs-booking-grid-container .booking-status.cancel {
+    color: #E64848;
+}
+
+.hs-booking-grid-container .fa-calendar-day {
+    color: #003865;
+}
+
+.hs-booking-grid-container .booking-status.cancel {
+    color: #E64848;
+}
+
+.hs-booking-grid-container .booking-status.today {
+    color: #003865;
+}
+
+.fw600 {
+    font-weight: 600;
+}
+
+.text-dark-gray {
+    color: #515E63;
+}
+
+.hs-booking-grid-container .person-name-text {
+    font-size: 0.9rem;
+
+}
+
+.hs-booking-grid-container .booking-number {
+    text-decoration: underline;
+    font-size: 0.9rem;
+}
+
+.hs-booking-grid-container .general-text {
+    font-size: 0.9rem;
+}
+
+
+.hs-booking-grid-container .price-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+}
+
+.tac {
+    text-align: center;
+}
+
+.hs-symbol-color {
+    color: #a0a0a0;
+}
+
+.hs-symbol-color > div {
+    display: inline-block;
+}
+
+.fw900 {
+    font-weight: 900;
+}
+
+.tar {
+    text-align: right;
+}
+
+.pr05 {
+    padding-right: 5px;
+}
+
+.group-popover {
+    display: inline-block;
+    position: relative;
+}

@@ -1,0 +1,66 @@
+.m10 {
+    margin: 10px;
+}
+
+.hs-waiting-grid .dx-toolbar .dx-button-content {
+    height: 36px;
+}
+
+.hs-assign-grid .dx-toolbar .dx-button-content {
+    height: 36px;
+}
+
+.hs-entire-grid .dx-editor-outlined.dx-texteditor-with-floating-label, .dx-editor-outlined.dx-texteditor-with-label {
+    margin-top: 0;
+}
+
+.hs-cancel-grid .dx-editor-outlined.dx-texteditor-with-floating-label, .dx-editor-outlined.dx-texteditor-with-label {
+    margin-top: 0;
+}
+
+.dx-row.dx-freespace-row.dx-column-lines {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.dx-datagrid-total-footer.dx-datagrid-nowrap {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+
+.dx-datagrid-rowsview .dx-datagrid-table .dx-row.dx-freespace-row, .dx-datagrid-rowsview .dx-datagrid-table .dx-row.dx-virtual-row {
+    border-bottom: 1px solid #ddd;
+}
+
+.dx-theme-generic-typography .dx-font-s, .dx-theme-generic-typography h4 {
+    font-size: 16px;
+    margin-left: 10px;
+}
+
+.hs-tab-box.dx-tabpanel > .dx-tabpanel-tabs .dx-tabs {
+    display: table;
+}
+
+.hs-tab-box .dx-tab.dx-tab-selected {
+    border-top: 2px solid #D70010;
+    background: #fff;
+    border-left: transparent;
+    border-right: transparent;
+}
+
+.hs-tab-box .dx-tabpanel-container {
+    background: #fff;
+}
+
+.hs-tab-box .hs-box {
+    margin: 5px;
+    padding: 10px 5px;
+}
+
+
+.h100p {
+    height: 100%;
+}

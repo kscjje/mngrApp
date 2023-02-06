@@ -1,0 +1,304 @@
+.hs-hidden {
+    display: none;
+}
+
+.mt10 {
+    margin-top: 10px;
+}
+
+.pr10 {
+    padding-right: 10px;
+}
+
+.m10 {
+    margin: 10px;
+}
+
+.hs-return-empty-text {
+    display: flex;
+    text-align: center;
+    color: #C6C6C6;
+    height: 100%;
+    vertical-align: middle;
+    justify-content: center;
+    align-items: center;
+}
+
+.hs-return-empty-icon-text i {
+    font-size: 144px;
+}
+
+.hs-return-detail-container {
+    width: 100%;
+    height: 100%;
+}
+
+.hs-return-detail-empty-container {
+    background: #c8c8c8;
+    width: 100%;
+    height: 100%;
+}
+
+.hs-receipt-search-no-container span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hs-receipt-search-price-container {
+    text-align: right;
+}
+
+.hs-receipt-search-price-container span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.hs-receipt-search-member-container span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #6c757d;
+}
+
+.hs-receipt-search-payment-location-text {
+    color: #6c757d;
+    font-size: 14px;
+    margin-left: 5px;
+}
+
+.hs-receipt-search-payment-method-text {
+    color: #6c757d;
+    margin-left: 5px;
+}
+
+.hs-receipt-search-date-text {
+    color: #022B70;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.dx-state-active .hs-receipt-search-member-container span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.dx-state-focused .hs-receipt-search-member-container span {
+    font-size: 14px;
+    font-weight: 600;
+    color: #fff;
+}
+
+.dx-state-active .hs-receipt-search-payment-location-text {
+    color: #fff;
+    font-size: 14px;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.dx-state-focused .hs-receipt-search-payment-location-text {
+    color: #fff;
+    font-size: 14px;
+    margin-left: 5px;
+    font-weight: 600;
+}
+
+.dx-state-active .hs-receipt-search-date-text {
+    color: #90e4f1;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.dx-state-focused .hs-receipt-search-date-text {
+    color: #90e4f1;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.hs-purchase-grid-container .dx-datagrid-total-footer.dx-datagrid-nowrap {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.hs-purchase-grid-container .dx-row.dx-freespace-row.dx-column-lines {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.hs-payment-grid-container .dx-row.dx-freespace-row.dx-column-lines {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.hs-payment-grid-container .dx-datagrid-total-footer.dx-datagrid-nowrap {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.hs-last {
+    position: fixed;
+    right: 0;
+}
+
+.hs-receipt-search-container .dx-button-content {
+    padding: 5px 8px !important;
+}
+
+.hs-return-text {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.hs-return-main-container {
+    height: calc(100vh - 40px);
+    margin-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.hs-return-main-container .hs-header-container {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #3d444b;
+}
+
+.hs-remove-container {
+    text-align: right;
+}
+
+.hs-return-main-container .hs-header-container i {
+    font-size: 20px;
+    color: #3d444b;
+}
+
+.hs-return-main-box {
+    padding: 10px;
+}
+
+.hs-return-main-box .hs-return-label {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.hs-return-main-box .hs-return-value {
+    font-size: 16px;
+}
+
+.hs-receipt-search-button.dx-button {
+    border-radius: 4px;
+    line-height: 3em;
+}
+
+.hs-receipt-search-button-container {
+    display: flex;
+    width: 20%;
+}
+
+.hs-receipt-search-button .dx-button-content {
+    padding: 0 8px;
+    font-size: 13px;
+}
+
+.mt20 {
+    margin-top: 20px;
+}
+
+.mb20 {
+    margin-bottom: 20px;
+}
+
+.hs-cancel-method-box .dx-field-item-help-text {
+    font-size: 12px;
+    color: #e04b59;
+    font-style: normal;
+}
+
+.hs-cancel-date-box .dx-field-item-help-text, .hs-cancel-date-box span {
+    font-size: 12px;
+    color: #e04b59;
+    font-style: normal;
+    line-height: 3em;
+}
+
+.hs-view-mode .dx-texteditor, .hs-view-mode .dx-texteditor.form-editor {
+    pointer-events: none;
+}
+
+.hs-view-mode .dx-texteditor::after, .hs-view-mode .dx-texteditor.form-editor::after {
+    border-color: transparent;
+    opacity: 1;
+}
+
+.hs-view-mode .dx-texteditor.dx-editor-outlined {
+    background: #f6f6f6;
+    border-color: transparent;
+    opacity: 1;
+
+}
+
+.hs-view-mode .dx-numberbox .dx-texteditor-input {
+    text-align: left;
+}
+
+.hs-return-main-box .hs-return-unit-box {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.hs-return-main-box .hs-return-unit-box > div {
+    width: 50%;
+    margin-top: 10px;
+}
+
+.hs-return-main-box .hs-return-line {
+    background: #ddd;
+    height: 1px;
+    margin-left: -10px;
+    margin-right: -10px;
+}
+
+.hs-receipt-search-item-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.hs-receipt-search-button-container .hs-cancel-button-container {
+    line-height: 3em;
+    margin-right: 20px;
+}
+
+.dx-state-active .hs-receipt-search-button.dx-button-mode-outlined.dx-button-default {
+    background-color: transparent;
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+.dx-state-active .hs-receipt-search-button .dx-icon {
+    color: #fff !important;
+}
+
+.dx-state-focused .hs-receipt-search-button.dx-button-mode-outlined.dx-button-default {
+    background-color: transparent;
+    border-color: #fff !important;
+    color: #fff !important;
+}
+
+.dx-state-focused .hs-receipt-search-button .dx-icon {
+    color: #fff !important;
+}
+
+.hs-sale-date-text {
+    font-size: 18px !important;
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.hs-main-west-container {
+    border-right: 1px solid #ddd;
+}

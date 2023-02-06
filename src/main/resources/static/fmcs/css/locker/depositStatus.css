@@ -1,0 +1,27 @@
+.hs-deposit-grid-container .dx-datagrid-total-footer.dx-datagrid-nowrap {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.hs-deposit-grid-container .dx-row.dx-freespace-row.dx-column-lines {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.hs-deposit-grid-container .dx-row.dx-freespace-row.dx-column-lines {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+.hs-deposit-grid-container .dx-datagrid-total-footer.dx-datagrid-nowrap {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.tar {
+    text-align: right !important;
+}

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+	<definition name="fmcsLayout" template="/WEB-INF/jsp/fmcs/layouts/layout.jsp">
+        <put-attribute name="libnavbar" value="/WEB-INF/jsp/fmcs/fragments/navbar.jsp" />
+        <put-attribute name="libsidebar" value="/WEB-INF/jsp/fmcs/fragments/sidebar.jsp" />
+        <put-attribute name="libheader" value="/WEB-INF/jsp/fmcs/fragments/header.jsp" />
+        <put-attribute name="libbody" value="" />
+        <put-attribute name="libfooter" value="/WEB-INF/jsp/fmcs/fragments/footer.jsp" />
+    </definition>
+
+    <definition name="fmcs/*" extends="fmcsLayout">
+        <put-attribute name="libbody" value="/WEB-INF/jsp/fmcs/{1}.jsp" />
+    </definition>
+    <definition name="fmcs/*/*" extends="fmcsLayout">
+        <put-attribute name="libbody" value="/WEB-INF/jsp/fmcs/{1}/{2}.jsp" />
+    </definition>
+    <definition name="fmcs/*/*/*" extends="fmcsLayout">
+        <put-attribute name="libbody" value="/WEB-INF/jsp/fmcs/{1}/{2}/{3}.jsp" />
+    </definition>
+   
+	<definition name="fmcsBodyLayout" template="/WEB-INF/jsp/fmcs/layouts/bodyLayout.jsp">
+        <put-attribute name="bodybody" value="" />
+    </definition>
+    <definition name="tiles:fmcs/*" extends="fmcsBodyLayout">
+        <put-attribute name="bodybody" value="/WEB-INF/jsp/fmcs/{1}.jsp" />
+    </definition>
+    <definition name="tiles:fmcs/*/*" extends="fmcsBodyLayout">
+        <put-attribute name="bodybody" value="/WEB-INF/jsp/fmcs/{1}/{2}.jsp" />
+    </definition>
+    <definition name="tiles:fmcs/*/*/*" extends="fmcsBodyLayout">
+        <put-attribute name="bodybody" value="/WEB-INF/jsp/fmcs/{1}/{2}/{3}.jsp" />
+    </definition>
+    
+    <definition name="fmcsEmptyLayout" template="/WEB-INF/jsp/fmcs/layouts/emptyLayout.jsp">
+        <put-attribute name="empbody" value="" />
+    </definition>
+    <definition name="jsp:fmcs/*/*" extends="fmcsEmptyLayout">
+        <put-attribute name="empbody" value="/WEB-INF/jsp/fmcs/{1}/{2}.jsp"/>
+    </definition>
+    
+</tiles-definitions>

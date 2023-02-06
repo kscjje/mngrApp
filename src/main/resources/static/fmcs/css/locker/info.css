@@ -1,0 +1,61 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+.hs-box {
+    padding: 7.5px;
+}
+
+
+.hs-toolbar-container {
+    padding: 5px 0px 15px 0px;
+}
+
+
+.hs-toolbar-container .dx-button {
+    margin-top: 5px;
+}
+
+.mt05 {
+    margin-top: 5px;
+}
+
+.hs-child-editor-box {
+    padding-left: 11px;
+}
+
+h4 {
+    font-size: 1.15em;
+}
+.dx-row.dx-freespace-row.dx-column-lines {
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+.dx-datagrid-total-footer.dx-datagrid-nowrap {
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+}
+
+.dx-datagrid-rowsview .dx-datagrid-table .dx-row.dx-freespace-row, .dx-datagrid-rowsview .dx-datagrid-table .dx-row.dx-virtual-row{
+    border-bottom: 1px solid #ddd;
+}
+
+.hs-hidden {
+    display: none;
+}
+
+.hs-fee-grid-container tr.dx-header-row > td {
+    border-top : 1px solid #ddd;
+    border-left: 1px solid #ddd !important;
+    border-right: 1px solid #ddd !important;
+}
+
+.hs-title {
+    font-size: 16px !important;
+    font-weight: 700;
+}

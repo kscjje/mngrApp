@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="fmcs.UserMapper">
+	
+	<!-- 목록 검색 조건 -->
+	<sql id="searchCond">
+		<where>
+		LIB_CODE = #{LIB_CODE}
+		<if test="SC_LEDGER !=null and SC_LEDGER != ''">
+        	AND LEDGER_SEQ = #{SC_LEDGER}
+        </if>
+		<if test="SC_KEYWORD != null and SC_KEYWORD != '' ">
+			<if test="SC_KEY == 'USER_SEQ_STR'">                
+               AND USER_SEQ_STR LIKE CONCAT('%', #{SC_KEYWORD}, '%') 
+             </if>
+             <if test="SC_KEY == 'USER_NAME'">
+             	AND USER_NAME LIKE CONCAT('%', #{SC_KEYWORD}, '%')  
+             </if>
+             <if test="SC_KEY == 'USER_PHONE'">
+             	AND USER_PHONE LIKE CONCAT('%', #{SC_KEYWORD}, '%') 
+             </if>
+		</if>
+				
+		</where>
+	</sql>
+	<select id="search" parameterType="UvMap" resultType="UvMap">
+		SELECT 
+			LIB_CODE, 
+			USER_SEQ_STR, 
+			USER_NAME,  
+			USER_PHONE, 
+			USER_BIRTHDAY,
+			GRADE_CODE,
+			IF(USER_GROUP_CODE IS NULL,'',(SELECT C_CD_NM  FROM TBL_CODE WHERE C_UPPER_CD='USER_GROUP' AND C_CD=U.USER_GROUP_CODE AND C_LIB_CODE=#{LIB_CODE})) AS USER_GROUP_CODE,
+			IF(GRADE_CODE IS NULL,'',(SELECT CONCAT(G.GRADE_NAME," 대출가능 권수:",G.GRADE_LOANCNT," 대출 기간:",G.GRADE_LOANDUE) FROM TBL_USERGRADE G WHERE G.GRADE_CODE=U.GRADE_CODE AND G.LIB_CODE=U.LIB_CODE)) AS USER_GRADE,
+			USER_STOPDATE,
+			DATE_FORMAT(USER_MOD_DT,'%Y-%m-%d %H:%i:%S') AS USER_MOD_DT
+		FROM TBL_USER U
+		<include refid="searchCond"/>
+	</select>
+	<select id="selectLedger" parameterType="UvMap" resultType="UvMap">
+		SELECT *
+        FROM TBL_LEDGER 
+        WHERE 1=1
+        -- AND LEDGER_TYPE_CODE='U'
+        ORDER BY LEDGER_SEQ ASC		
+	</select>
+	<select id="selectGrade" parameterType="UvMap" resultType="UvMap">
+		SELECT *
+        FROM TBL_USERGRADE WHERE 
+        LIB_CODE = #{LIB_CODE}
+        ORDER BY GRADE_REG_DT ASC
+	</select>
+	<select id="selectMaxSeq" parameterType="UvMap" resultType="long">
+		SELECT IFNULL(MAX(USER_SEQ),0)+1 as NEW_USER_SEQ
+		FROM TBL_USER WHERE 1 = 1
+	    	AND LEDGER_SEQ = #{LEDGER_SEQ}
+    	    AND LIB_CODE = #{LIB_CODE}		
+	</select>
+	<select id="select" parameterType="UvMap" resultType="UvMap">
+		SELECT *
+		,(SELECT COUNT(*) FROM TBL_OUT WHERE USER_SEQ_STR=#{USER_SEQ_STR}) AS OUT_CNT
+		,(SELECT COUNT(*) FROM TBL_OUT WHERE USER_SEQ_STR=#{USER_SEQ_STR} 
+		AND DATE_FORMAT(RETURN_PREDT,'%Y-%m-%d') <![CDATA[<]]> DATE_FORMAT(NOW(),'%Y-%m-%d')) AS OVERDUE_CNT
+        FROM TBL_USER WHERE 1 = 1
+		<if test="USER_SEQ_STR != null">
+        	AND USER_SEQ_STR = #{USER_SEQ_STR}
+        </if>
+        AND LIB_CODE = #{LIB_CODE}		
+	</select>
+
+	<!-- 등록 -->
+	<insert id="insert" parameterType="UvMap">
+		INSERT INTO TBL_USER
+		(
+			USER_SEQ, 
+			USER_SEQ_STR, 
+			LEDGER_SEQ, 
+			<if test="USER_GROUP_CODE != null">USER_GROUP_CODE,</if>
+			<if test="GRADE_CODE != null">GRADE_CODE, </if>
+			<if test="USER_NAME != null">USER_NAME,</if>
+			<if test="USER_PASSWD != null">USER_PASSWD,</if>
+			<if test="USER_PHONE != null">USER_PHONE, </if>
+			<if test="USER_TEL != null">USER_TEL,</if>
+			<if test="USER_EMAIL != null">USER_EMAIL,</if>
+			<if test="USER_POST != null">USER_POST, </if>
+			<if test="USER_ADDR1 != null">USER_ADDR1,</if>
+	 		<if test="USER_ADDR2 != null">USER_ADDR2,  </if>
+	 		<if test="USER_COMMENT != null">USER_COMMENT, </if>
+	 		<if test="USER_SEX != null">USER_SEX,</if>
+	 		<if test="USER_BIRTHDAY != null">USER_BIRTHDAY ,</if>
+	 		<if test="USER_STOPDATE != null">USER_STOPDATE,</if>
+	 		LIB_CODE
+		) VALUES (
+			#{USER_SEQ}, 
+			#{USER_SEQ_STR}, 
+			#{LEDGER_SEQ}, 
+			<if test="USER_GROUP_CODE != null">#{USER_GROUP_CODE},</if>
+			<if test="GRADE_CODE != null">#{GRADE_CODE}, </if>
+			<if test="USER_NAME != null">#{USER_NAME},</if>
+			<if test="USER_PASSWD != null">#{USER_PASSWD},</if>
+			<if test="USER_PHONE != null">#{USER_PHONE}, </if>
+			<if test="USER_TEL != null">#{USER_TEL},</if>
+			<if test="USER_EMAIL != null">#{USER_EMAIL},</if>
+			<if test="USER_POST != null">#{USER_POST}, </if>
+			<if test="USER_ADDR1 != null">#{USER_ADDR1},</if>
+	 		<if test="USER_ADDR2 != null">#{USER_ADDR2},  </if>
+	 		<if test="USER_COMMENT != null">#{USER_COMMENT}, </if>
+	 		<if test="USER_SEX != null">#{USER_SEX},</if>
+	 		<if test="USER_BIRTHDAY != null">#{USER_BIRTHDAY},</if>
+	 		<if test="USER_STOPDATE != null">#{USER_STOPDATE},</if>
+	 		#{LIB_CODE}
+		)
+	</insert>
+
+	<update id="update" parameterType="UvMap">
+	UPDATE TBL_USER
+	SET
+			<if test="USER_GROUP_CODE != null">USER_GROUP_CODE = #{USER_GROUP_CODE},</if>
+			<if test="GRADE_CODE != null">GRADE_CODE = #{GRADE_CODE},</if>
+			<if test="USER_PASSWD != null">USER_PASSWD = #{USER_PASSWD},</if>
+			<if test="USER_PHONE != null">USER_PHONE = #{USER_PHONE},</if>
+			<if test="USER_NAME != null">USER_NAME = #{USER_NAME},</if>
+			<if test="USER_TEL != null">USER_TEL = #{USER_TEL},</if>
+			<if test="USER_EMAIL != null">USER_EMAIL = #{USER_EMAIL},</if>
+			<if test="USER_STOPDATE != null">USER_STOPDATE = #{USER_STOPDATE},</if>
+			<if test="USER_POST != null">USER_POST = #{USER_POST},</if>
+			<if test="USER_ADDR1 != null">USER_ADDR1 = #{USER_ADDR1},</if>
+			<if test="USER_ADDR2 != null">USER_ADDR2 = #{USER_ADDR2},</if>
+			<if test="USER_BIRTHDAY != null">USER_BIRTHDAY = #{USER_BIRTHDAY},</if>
+			<if test="USER_SEX != null">USER_SEX = #{USER_SEX},</if>
+			<if test="USER_COMMENT != null">USER_COMMENT = #{USER_COMMENT},</if>
+		USER_MOD_DT=NOW() 
+	WHERE LIB_CODE= #{LIB_CODE}  AND USER_SEQ_STR = #{USER_SEQ_STR}
+	</update>
+
+	<update id="delete" parameterType="UvMap">
+		DELETE FROM TBL_USER 
+		WHERE LIB_CODE= #{LIB_CODE} AND USER_SEQ_STR = #{USER_SEQ_STR}
+	</update>
+</mapper>

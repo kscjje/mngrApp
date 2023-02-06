@@ -1,0 +1,316 @@
+
+input:disabled,input.readOnly {
+    background: #e5e5e5;
+}
+
+.form-group {
+	margin: 10px 0 9px 10px;
+	display:inline-block;
+}
+.margin-left-m45{
+	margin-left:-45px;
+}
+.margin-left-m11{
+	margin-left:-11px;
+}
+.margin-left-m20{
+	margin-left:-20px;
+}
+.margin-left-m100{
+	margin-left:-100px;
+}
+.margin-left-4{
+	margin-left:4px;
+}
+.margin-right-10{
+	margin-right:10px;
+}
+.margin-top-m10{
+	margin-top:-10px;
+}
+.padding-lr-0{
+	padding-left:0px;
+	padding-right:0px;
+}
+.shadow_box{
+	height: 100vh;
+	padding:10px;
+	background:#F4F4F4;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25);
+
+}
+.shadow_box2{
+	height: 100%;
+	padding:10px;
+	background:#F4F4F4;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25);
+
+}
+.noneheight-shadowbox
+{
+	padding:10px;
+	background:#fff;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25);
+}
+.dx-datagrid-rowsview {border-top:0;}
+.dx-datagrid-headers {color:#000;}
+.dx-datagrid-headers td {background-color:#f5f5f5 !important;text-align:center !important;}
+table tr td:nth-child(2) {border-left:0;}
+
+/* .dx-popup-content  .dx-scrollbar-vertical{right:-15px;} */
+.dx-popup-content{
+	padding-top:10px;
+	overflow:auto;
+	/* margin-right:20px; */
+}
+.popup_conditions{
+	background:#F4F4F4;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25);
+	height:60px;
+	display:flex;
+}
+
+.popup_conditions  .form-group {
+	margin:9px;
+}
+.dx-htmleditor .dx-htmleditor-toolbar-wrapper:first-child {
+    border-bottom: 0px;
+} 
+
+.centerlist{
+	margin-top:10px;
+	padding:10px;
+	box-shadow: 0 0px 1px 0 rgba(0,0,0,0.25);
+	background: #fff;
+	border: 1px solid #EEEEEE;
+	border-bottom: 1px solid #8D8D8D;  
+	border-radius: 0px;
+}
+.subject{
+	font-size:16px;	
+	padding:5px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25);
+	background: #e9e9e9;
+	border: 1px solid #EEEEEE;
+	border-bottom: 1px solid #8D8D8D;  
+	border-radius: 5px;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25);
+}
+.instructorlist{
+	margin-top:10px;
+}
+
+.btnhide{
+	display:none;
+}
+
+.tagboxclose .dx-texteditor-container .dx-tag-remove-button::after,
+.tagboxclose .dx-texteditor-container .dx-tag-remove-button::before {
+    content: unset;
+}
+
+.writeable{
+	border-top: 2px solid #3f51b5 !important;
+}
+.dx-treelist-search-panel {
+	width: calc(60% - 1px) !important;float:right;
+}
+#upArea,#downArea{
+	height:45vh;
+
+}
+
+.dx-treelist-rowsview .dx-treelist-collapsed span, .dx-treelist-rowsview .dx-treelist-expanded span {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: 1rem;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;	
+}
+.dx-treelist-rowsview .dx-treelist-collapsed span::before {  
+	margin-left: -8px;
+    margin-top: -5px;	
+    content: "\f147";
+}  
+.dx-treelist-rowsview .dx-treelist-expanded span::before {  
+	margin-left: -8px;
+    margin-top: -5px;	
+    content: "\f196";
+}
+.cd_contents{
+	margin-top: 10px;
+}
+.tab_contents{
+	overflow-y: auto;
+	
+	margin-top:5px;
+	padding:5px 0px 5px 5px;
+}
+.item_height_0 {
+    height: 0;
+    z-index:1;
+    
+}
+.to-date .dx-field-item-label-content{
+	width:18px !important;
+}	
+
+.label-width-100 .dx-field-item-label-content{
+	width:100px !important;
+}
+
+
+.mt05 {
+    margin-top: 5px;
+}
+.hs-cancel-day-editor-box {
+    display: flex;
+    line-height: 2.5em;
+}
+.text-align-right {
+	text-align:right;
+}
+
+.educhange-tables {
+  display: flex;
+}
+
+.educhange-column:first-child {
+	
+  	width: 52%;
+}
+.educhange-button_group {
+  text-align:center;
+  width: 6%;
+}
+.educhange-button_group > div {
+ position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+}
+.educhange-column:last-child {
+  width: 52%;
+}
+#eduChangeSrcForm .dx-field-empty-item{
+	height:120px;	
+} 
+.dx-datagrid-total-footer,.dx-datagrid-total-footer td{
+	background-color: aliceblue;
+}
+.dx-datagrid-group-footer td
+{
+	background-color: honeydew !important;
+}
+/* �����ް��ϰ��� �޷�  -- start*/
+/* height: 100vh;
+	padding:10px;
+	background:#F4F4F4;
+	box-shadow: 0 1px 4px 0 rgba(0,0,0,0.25); */
+.hs-unavailable-calendar-container {
+    width : 98%;
+    height : 91% !important; 
+    position: absolute; 
+    min-height: 680px;
+    padding-bottom: 30px; 
+}
+ .hs-unavailable-calendar-container .dx-calendar-cell {
+    height : 60px;
+    text-align: left;
+    border-radius : 0;
+    border: 1px solid rgba(221,221,221,.6);
+} 
+.hs-unavailable-calendar-container .dx-calendar-body {
+    overflow: hidden;
+}
+.hs-unavailable-calendar-container .dx-widget.dx-calendar-navigator {
+    display: inline-block;
+    width : 30%;
+    position: relative;
+}
+.hs-unavailable-calendar-container .dx-calendar-footer {
+    position: absolute !important;
+    text-align: left !important;
+    width: 30% !important;
+    display: inline-block !important;
+    bottom:auto !important;
+}
+.hs-unavailable-calendar-container .dx-calendar-footer .dx-button {
+    height: 36px;
+    border-radius: 4px;
+}
+
+.hs-unavailable-calendar-container .dx-calendar-cell.hs-cell-disabled{
+    background-image:
+            repeating-linear-gradient(
+                    135deg,
+                    rgba(244, 67, 54, 0.1),
+                    rgba(244, 67, 54, 0.1) 4px,
+                    transparent 4px,
+                    transparent 9px
+            );
+    color: #9b6467;
+}
+
+.hs-unavailable-calendar-container .dx-calendar-cell.dx-calendar-selected-date.hs-cell-disabled {
+    -webkit-box-shadow: inset 0 0;
+    box-shadow: inset 0 0;
+   
+}
+.hs-unavailable-calendar-container .dx-calendar-cell.dx-calendar-selected-date.hs-cell-disabled .dx-icon-remove, .hs-unavailable-calendar-container .dx-calendar-cell.hs-cell-disabled .dx-icon-remove{
+    color: #3d444b;
+}
+.hs-holiday-date {
+	color :#D22B2B !important;
+/* 	background-color: rgb(255 71 71 / 20%); */
+}
+.hs-holiday-day {
+	color :#D22B2B !important;
+}
+.hs-unavailable-calendar-container .dx-calendar-body{
+	box-shadow: 0 1px 4px 0 rgb(0 0 0 / 25%);
+    padding-top: 5px;
+}
+
+td[role='columnheader'] {text-align:center !important;}
+
+.selectHint{
+	color: coral;
+}
+ 
+/* .hs-holiday-day-toolbar {
+	float: right;
+	display: table-cell;
+	width: 30%;
+} */
+/*�����ް��� schedule
+ #holidaySchedule .dx-scheduler-header .dx-toolbar .dx-toolbar-before .dx-toolbar-item-content {
+    padding: 0 !important;
+} 
+.weekend-title, .hs-holiday-date {
+	color :#D22B2B !important;
+}
+.hs-holiday-date {
+	color :#D22B2B !important;
+	background-color: rgb(255 71 71 / 20%);
+}
+.hs-holiday-date span {
+    float:left;font-size:10pt;margin-top:2px;
+}
+.day-cell {
+  width: 100%;
+  height: 100%;
+}
+.dx-scheduler-date-table-cell, .dx-scheduler-header-panel-cell {
+    border-right: 1px solid rgba(221,221,221,.6) !important;
+}
+.dx-scheduler-date-table-cell .dx-template-wrapper {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  padding-right: 6px;
+}
+.hs-repeat-yearly-last-box {
+    padding-left :79px !important;
+}
+
+*/

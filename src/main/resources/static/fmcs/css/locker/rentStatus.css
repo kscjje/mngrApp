@@ -1,0 +1,29 @@
+.hs-search-buttom-container {
+    text-align: right;
+    margin-top: 10px;
+}
+
+.hs-main-container {
+    height: calc(100vh - 40px)
+}
+
+.hs-search-container {
+    padding: 10px;
+    background: #f7f7f7;
+}
+
+.hs-status-grid-container {
+    margin-top: 20px;
+    max-height: calc(100vh - 220px);
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.m05 {
+    margin: 5px;
+}
+
+.hs-day-until-the-end {
+    line-height: 3.5em;
+    margin-left : -25px;
+}

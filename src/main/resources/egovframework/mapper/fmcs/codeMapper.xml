@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="app.library.mapper.CodeMapper">
+    <!-- 목록 검색 조건 -->
+    <sql id="searchCond">
+        <if test="C_USE_YN != null">
+            AND C_USE_YN = #{C_USE_YN}
+        </if>
+        <if test="C_UPPER_CD != null">
+            AND C_UPPER_CD = #{C_UPPER_CD}
+        </if>
+        <if test="C_CD != null">
+            AND C_CD = #{C_CD}
+        </if>
+        <if test="F != null">
+            <if test="F == 'UP'">
+                AND C_ORD <![CDATA[<]]> #{C_ORD}
+                ORDER BY C_ORD DESC
+            </if>
+            <if test="F == 'DOWN'">
+                AND C_ORD > #{C_ORD}
+                ORDER BY C_ORD ASC
+            </if>
+        </if>
+    </sql>
+
+    <sql id="order">
+        ORDER BY C_ORD ASC
+    </sql>
+
+    <select id="select" parameterType="UvMap" resultType="UvMap">
+        SELECT A.*
+        FROM TBL_CODE A WHERE  C_LIB_CODE =  #{LIB_CODE}
+        <include refid="searchCond"/>
+        <include refid="order"/>
+    </select>
+
+    <select id="selectRoot" parameterType="UvMap" resultType="UvMap">
+        SELECT A.*
+        FROM TBL_CODE A WHERE C_LIB_CODE =  #{LIB_CODE}
+        <include refid="searchCond"/>
+        <include refid="order"/>
+    </select>
+
+    <select id="selectCode" parameterType="UvMap" resultType="UvMap">
+        SELECT
+        A.*,
+        (SELECT C_CD FROM TBL_CODE B WHERE A.C_CD = B.C_UPPER_CD ORDER BY C_ORD ASC LIMIT 1) AS SUB_TOP_CD
+        FROM TBL_CODE A WHERE C_LIB_CODE =  #{LIB_CODE}
+        <include refid="searchCond"/>
+        <include refid="order"/>
+    </select>
+
+    <insert id="insert" parameterType="UvMap">
+        INSERT INTO TBL_CODE
+        (
+        <if test="C_UPPER_CD != null">C_UPPER_CD,</if>
+        <if test="C_CD != null">C_CD,</if>
+        <if test="C_CD_NM != null">C_CD_NM,</if>
+        <if test="C_RMKS != null">C_RMKS,</if>
+        <if test="C_ETC_INF1 != null">C_ETC_INF1,</if>
+        <if test="C_ETC_INF2 != null">C_ETC_INF2,</if>
+        <if test="C_ETC_INF3 != null">C_ETC_INF3,</if>
+        <if test="C_ETC_INF4 != null">C_ETC_INF4,</if>
+       	C_LIB_CODE,
+        C_ORD
+        )
+        VALUES
+        (
+        <if test="C_UPPER_CD != null">#{C_UPPER_CD},</if>
+        <if test="C_CD != null">#{C_CD},</if>
+        <if test="C_CD_NM != null">#{C_CD_NM},</if>
+        <if test="C_RMKS != null">#{C_RMKS},</if>
+        <if test="C_ETC_INF1 != null">#{C_ETC_INF1},</if>
+        <if test="C_ETC_INF2 != null">#{C_ETC_INF2},</if>
+        <if test="C_ETC_INF3 != null">#{C_ETC_INF3},</if>
+        <if test="C_ETC_INF4 != null">#{C_ETC_INF4},</if>
+        #{LIB_CODE},
+        <if test="C_ORD != ''">#{C_ORD}</if>
+        <if test="C_ORD == ''">(SELECT IFNULL(MAX(C_ORD),0) + 1 FROM TBL_CODE M WHERE C_UPPER_CD = #{C_UPPER_CD})</if>
+        )
+    </insert>
+
+    <update id="update" parameterType="UvMap">
+        UPDATE TBL_CODE SET
+        <if test="C_CD_NM != null">C_CD_NM = #{C_CD_NM},</if>
+        <if test="C_RMKS != null">C_RMKS = #{C_RMKS},</if>
+        <if test="C_ETC_INF1 != null">C_ETC_INF1 = #{C_ETC_INF1},</if>
+        <if test="C_ETC_INF2 != null">C_ETC_INF2 = #{C_ETC_INF2},</if>
+        <if test="C_ETC_INF3 != null">C_ETC_INF3 = #{C_ETC_INF3},</if>
+        <if test="C_ETC_INF4 != null">C_ETC_INF4 = #{C_ETC_INF4},</if>
+        <if test="C_ORD != null">C_ORD = #{C_ORD},</if>
+        <if test="C_USE_YN != null">C_USE_YN = #{C_USE_YN},</if>
+        C_CD = #{C_CD}
+        WHERE C_UPPER_CD = #{C_UPPER_CD} AND C_CD = #{C_CD}
+        	AND C_LIB_CODE =  #{LIB_CODE}
+    </update>
+
+    <delete id="delete" parameterType="UvMap">
+        DELETE
+        FROM TBL_CODE
+        WHERE C_UPPER_CD = #{C_UPPER_CD}
+          AND C_CD = #{C_CD}
+          AND C_LIB_CODE =  #{LIB_CODE}
+    </delete>
+
+    <select id="selectTop" parameterType="UvMap" resultType="UvMap">
+        SELECT A.*
+        FROM TBL_CODE A WHERE C_LIB_CODE =  #{LIB_CODE}
+        <include refid="searchCond"/>
+        LIMIT 1
+    </select>
+
+    <!-- 다국어 지원 -->
+    <select id="selectLang" parameterType="UvMap" resultType="UvMap">
+        SELECT A.*
+        FROM TBL_CODE_LANG A
+        WHERE C_CD = #{C_CD}
+    </select>
+
+    <insert id="insertLang" parameterType="UvMap">
+        INSERT INTO TBL_CODE_LANG (C_CD,
+                                   C_CD_NM,
+                                   C_LANG_SET)
+        VALUES (#{C_CD},
+                #{C_CD_NM},
+                #{C_LANG_SET})
+    </insert>
+
+    <delete id="deleteLang" parameterType="UvMap">
+        DELETE 
+        FROM TBL_CODE_LANG
+        WHERE C_CD = #{C_CD}
+    </delete>
+
+	<select id="selectLibraryConfig" parameterType="UvMap" resultType="UvMap">
+        SELECT *
+        FROM TBL_CODE A WHERE  C_LIB_CODE =  #{LIB_CODE}
+        
+    </select>
+</mapper>

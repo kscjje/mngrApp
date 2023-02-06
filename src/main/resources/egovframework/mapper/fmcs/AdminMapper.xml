@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?> <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="app.library.mapper.AdminMapper">
+	<!-- 목록 검색 조건 -->
+	<sql id="searchCond">
+		<where>
+		<if test="SC_KEYWORD != null and SC_KEYWORD!=''">
+			<if test="SC_KEY == 'ADMIN_NM'">
+				AND ADMIN_NM LIKE CONCAT('%', #{SC_KEYWORD}, '%')
+			</if>
+			<if test="SC_KEY == 'ADMIN_ID'">
+				AND ADMIN_ID LIKE CONCAT('%', #{SC_KEYWORD}, '%')
+			</if>
+		</if>
+
+		AND LIB_CODE = #{LIB_CODE}
+		</where>
+	</sql>
+
+	<select id="select" parameterType="UvMap" resultType="UvMap">
+		SELECT ADMIN_SEQ, LIB_CODE, ADMIN_FLAG, ADMIN_ID, ADMIN_PASSWD, 
+				ADMIN_NM, ADMIN_HP_TEL, 
+				DATE_FORMAT(ADMIN_REG_DT,'%Y-%m-%d %H:%i:%S'),
+				DATE_FORMAT(ADMIN_MOD_DT,'%Y-%m-%d %H:%i:%S'),
+				ADMIN_LASTLOGIN_DT
+		 FROM TBL_ADMIN WHERE 1 = 1
+		<if test="ADMIN_ID_ != null">
+			AND ADMIN_ID= #{ADMIN_ID_}
+		</if>
+		<if test="ADMIN_SEQ != null">
+			AND ADMIN_SEQ= #{ADMIN_SEQ}
+		</if>
+		AND LIB_CODE = #{LIB_CODE}
+	</select>
+
+	<select id="search" parameterType="UvMap" resultType="UvMap">
+		SELECT ADMIN_SEQ, LIB_CODE, ADMIN_FLAG, ADMIN_ID, ADMIN_PASSWD, 
+				ADMIN_NM, ADMIN_HP_TEL, 
+				DATE_FORMAT(ADMIN_REG_DT,'%Y-%m-%d %H:%i:%S') AS ADMIN_REG_DT,
+				DATE_FORMAT(ADMIN_MOD_DT,'%Y-%m-%d %H:%i:%S') AS ADMIN_MOD_DT,
+				DATE_FORMAT(ADMIN_LASTLOGIN_DT,'%Y-%m-%d %H:%i:%S') AS ADMIN_LASTLOGIN_DT
+		FROM TBL_ADMIN
+		<include refid="searchCond"/>
+	</select>
+
+	<!-- 등록 -->
+	<insert id="insert" parameterType="UvMap">
+		INSERT INTO TBL_ADMIN
+		(
+		<if test="ADMIN_FLAG != null">ADMIN_FLAG,</if>
+		<if test="ADMIN_ID_ != null">ADMIN_ID,</if>
+		<if test="ADMIN_PASSWD_ != null">ADMIN_PASSWD,</if>
+		<if test="ADMIN_NM != null">ADMIN_NM,</if>
+		<if test="ADMIN_HP_TEL != null">ADMIN_HP_TEL,</if>
+		LIB_CODE
+		) VALUES (
+		<if test="ADMIN_FLAG != null">#{ADMIN_FLAG},</if>
+		<if test="ADMIN_ID_ != null">#{ADMIN_ID_},</if>
+		<if test="ADMIN_PASSWD_ != null">#{ADMIN_PASSWD_},</if>
+		<if test="ADMIN_NM != null">#{ADMIN_NM},</if>
+		<if test="ADMIN_HP_TEL != null">#{ADMIN_HP_TEL},</if>
+		#{LIB_CODE}
+		)
+	</insert>
+
+	<update id="update" parameterType="UvMap">
+		UPDATE TBL_ADMIN SET
+			<if test="ADMIN_FLAG != null">ADMIN_FLAG = #{ADMIN_FLAG},</if>
+			<if test="ADMIN_ID_ != null">ADMIN_ID = #{ADMIN_ID_},</if>
+			<if test="ADMIN_PASSWD_ != null and ADMIN_PASSWD_!=''">ADMIN_PASSWD = #{ADMIN_PASSWD_},</if>
+			<if test="ADMIN_NM != null">ADMIN_NM = #{ADMIN_NM},</if>
+			<if test="ADMIN_HP_TEL != null">ADMIN_HP_TEL = #{ADMIN_HP_TEL},</if>
+			ADMIN_MOD_DT = NOW()
+		WHERE 1 = 1
+		<if test="ADMIN_ID != null">
+			AND ADMIN_ID= #{ADMIN_ID_}
+		</if>
+		<if test="ADMIN_SEQ != null">
+			AND ADMIN_SEQ= #{ADMIN_SEQ}
+		</if>
+		AND LIB_CODE = #{LIB_CODE}
+	</update>
+
+	<update id="delete" parameterType="UvMap">
+		DELETE FROM TBL_ADMIN 
+		WHERE ADMIN_SEQ = #{ADMIN_SEQ}
+		AND LIB_CODE = #{LIB_CODE}
+	</update>
+</mapper>

@@ -1,0 +1,196 @@
+/* 회원정보관리 */
+/* #dxFormUser .dx-form-group>.dx-form-group-content .dx-layout-manager .dx-field-item:not(.dx-first-col) {padding-left:0;}
+#dxFormUser .dx-form-group>.dx-form-group-content .dx-layout-manager .dx-field-item:not(.dx-last-col) {padding-right:0;}  */	 
+.custom-tab .div-btn:not(:first_child) {border-left: 1px solid #202020}
+.custom-tab button {font-size:0.9rem;}
+.custom-tab button.btn {background:#fff;color:#161616}
+.custom-tab button.selected-tab {background:#000;color:#fff}
+.dx-tab {width:120px;}
+.desc-card .desc-text-area {
+	padding:0 30px 30px 0;
+}
+.desc-card .dx-texteditor-container {
+	float: left;
+    margin-top: -30px;
+}
+.desc-card textarea {
+	font-size:0.8rem;overflow:hidden !important;
+}
+.desc-card .desc-writer-area {
+	color:#bbb;font-size:0.7rem;float: right;margin-top: -21px;width: 100%;
+}
+.desc-card .desc-writer-area span:nth-child(1) {
+	margin-left: 7px;
+}
+.desc-card .desc-writer-area span:nth-child(2) {
+	float: right;margin-right: 7px;
+}
+
+.desc-register .desc-text-area {
+	width: calc(100% - 52px);display:inline-block;
+}
+.desc-register .desc-btn-area {
+	display:inline-block;width: 47px;margin-top:15px;
+}
+.desc-register .desc-btn-area .dx-button-content {
+	padding: 14px 7px;
+}
+.custom-tab .div-btn {
+	border: 1px solid #eee;border-radius: 0.2rem;
+}
+#gridEtc .dx-datagrid-borders > .dx-datagrid-header-panel {
+	background-color: #f4f4f4;
+}
+#gridEtc .dx-datagrid-header-panel .dx-toolbar {
+	background-color: #f4f4f4;
+}
+.desc-btn-area .cst-small-button {
+	float: right;
+}
+/* #gridDc .dx-command-select {
+	width:30px !important;
+	min-width: 30px!important; 
+}
+#gridDc .dx-command-edit {
+	width:60px !important;
+	min-width: 60px!important; 
+}
+#gridDc .dx-datagrid-rowsview td, #gridDc .dx-datagrid-rowsview input {
+	letter-spacing: -1px;padding:0;
+} */
+
+/* 회원정보보관리 탭 */
+#tab1 .btn-top-area, #tab3 .btn-top-area, #tab4 .btn-top-area, #tab5 .btn-top-area, #tab6 .btn-top-area, #tab7 .btn-top-area, #tab8 .btn-top-area {
+	padding: 0;font-size:0.9em;position: absolute;top: 46px;z-index: 10;width: calc(100% - 500px);
+}
+#tab1 .gridContainer, #tab3 .gridContainer, #tab4 .gridContainer, #tab5 .gridContainer, #tab6 .gridContainer, #tab7 .gridContainer, #tab8 .gridContainer {
+	height: calc(100vh - 518px);margin-top:11px;
+}
+#tab1 .form-option {
+	margin-left: 65px;
+}
+
+#tab2 .custom-tab {
+	padding: 0;margin-top:12px;
+}
+#tab2 .btn-top-area {
+	padding: 0;font-size:0.9em;position: absolute;top: 90px;z-index: 10;
+}
+#tab2 .tab2_1 .gridContainer, #tab2 .tab2_2 .gridContainer {
+	height: calc(100vh - 560px);margin-top:-4px;
+}
+
+/* 회원별강좌변경현황 */
+.grp_low_height .dx-field-item-label-text {vertical-align: -1px;}
+
+/* 이중회원통합처리 */
+#mergeList .btn-top-area {
+	padding: 0 0 0 17px;font-size:0.9em;z-index: 10;
+}
+#mergeList .gridContainer {
+	top: -56px;position: relative;
+}
+
+/* 강좌환불요청관리*/
+#refundList {
+	height:500px;
+}
+#refundList .btn-top-area {
+	padding: 0 0 0 17px;font-size:0.9em;z-index: 10;
+}
+#refundList .gridContainer {
+	top: -48px;position: relative;height:490px;
+}
+#refundDetail {
+	margin-top:10px;height:calc(100vh - 660px);
+}
+#refundDetail .btn-top-area {
+	padding: 0 0 0 17px;font-size:0.9em;z-index: 10;
+}
+#refundDetail .gridContainer {
+	margin-top:10px;top: -58px;position: relative;height: calc(100vh - 670px);
+}
+#descViewSection {
+	position:absolute;margin-top: 0;width:100%;margin: 0 0 0 -14px;
+}
+.desc-view textarea {
+	font-size:0.8rem;overflow:hidden !important;
+}
+.desc-view .desc-writer-area {
+	color:#bbb;font-size:0.7rem;float: right;margin-top: 7px;width: 100%;
+}
+.desc-view .desc-writer-area span:nth-child(1) {
+	margin-left: 7px;
+}
+.desc-view .desc-writer-area span:nth-child(2) {
+	float: right;margin-right: 7px;
+}
+.title-form-group {
+	position: absolute;
+	width: 34px;
+	line-height: 1.0rem;
+	font-size: 0.8rem;
+	padding: 14px 10px 14px 11px;
+	background-color: #fff;
+	top: 0;
+	left: 0;
+}
+.locker-payment-button-container {
+    display:flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+.locker-payment-info-box {
+    display: table;width:100%;padding: 5px;border-top: 1px solid #ccc;
+}
+.locker-payment-sub-box {
+    display: table;width:100%;padding: 5px;
+}
+.locker-payment-total-box {
+    display: table;width:100%;padding: 5px;border-top: 1px solid #ccc;border-bottom: 1px solid #ccc;
+}
+
+.locker-payment-header {
+    display: table-cell;width:30%;
+}
+.locker-payment-body {
+    display:table-cell;text-align: right;
+}
+.locker-payment-button-container > div {
+    width: 32.5%;
+}
+.locker-payment-button-container .locker-payment-button {
+    padding:10px 61px;
+}
+.mt15 {
+    margin-top : 15px;
+}
+.grey {
+    color: darkgrey;
+}
+.lec_status-tag{
+	margin-left:2px;
+	padding: 0px 6px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 10px;
+    font-size: 0.65rem;
+}
+.lec_status-button{
+	margin-left:2px;
+	padding: 0px 6px;
+    height: 15px;
+    display: inline-block;
+    border-radius: 2px;
+    font-size: 0.65rem;
+    width:50px;
+    text-align: center;
+}
+#lectureChangeTemplate .user-info .dx-field-item-label-text {
+	font-weight: 700;
+}
+#lectureChangeTemplate .user-info .dx-field-item-content {
+	font-size: 0.8rem;
+}
+
