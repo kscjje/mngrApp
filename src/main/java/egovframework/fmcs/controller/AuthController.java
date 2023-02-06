@@ -25,7 +25,6 @@ public class AuthController extends UvBaseController {
     @RequestMapping(value = "/login")
     public String login(Model model, HttpSession session, HttpServletRequest request, HttpServletResponse response) {
         //session.invalidate();
-
         String errorMessage = null;
         if (session != null) {
         }
